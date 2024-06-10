@@ -27,7 +27,8 @@
       name="shouldRepeat"
       class="col-span-2"
       :errors="formErrors?.shouldRepeat" />
-    <FormItemCheckbox v-model="formValues.shouldUseAcceleratedTime"
+    <FormItemCheckbox v-if="shouldShowDevFeatures"
+      v-model="formValues.shouldUseAcceleratedTime"
       label="Use accelerated time"
       name="shouldUseAcceleratedTime"
       class="col-span-2"
@@ -56,4 +57,12 @@
     workDuration: { required },
     breakDuration: { required },
   }));
+
+  const shouldShowDevFeatures = ref(false);
+
+  onMounted(() => {
+    if (process.env.NODE_ENV === 'development') {
+      shouldShowDevFeatures.value = true;
+    }
+  });
 </script>

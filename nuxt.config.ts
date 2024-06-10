@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Inter: {
-        wght: [400, 500, 600, 700],
+      wght: [400, 500, 600, 700],
         ital: [400, 500, 600, 700],
       },
       'Space Mono': {
