@@ -2,7 +2,7 @@
   <label :for="name"
     class="col-span-1 form-control">
     <div class="label">
-      <div class="label-text">
+      <div class="font-bold label-text">
         {{ label }}
         <span v-if="required"
           class="align-top text-error label-required-indicator">*</span>
@@ -12,7 +12,9 @@
       v-model="value"
       :name="name"
       type="number"
-      class="input input-bordered"
+      class="border-2 border-neutral input input-bordered"
+      pattern="[0-9]*"
+      inputmode="numeric"
       :placeholder="placeholder || label"
       :disabled="disabled"
       :required="required" />

@@ -37,6 +37,9 @@ export default defineNuxtConfig({
           },
         },
       },
+      daisyui: {
+        themes: ['lofi'],
+      },
     },
   },
 });

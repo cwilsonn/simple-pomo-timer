@@ -1,6 +1,6 @@
 <template>
   <form id="pomodoro-form"
-    class="grid grid-cols-2 gap-4 p-4 rounded-lg shadow-lg md:p-8 bg-base-100"
+    class="grid grid-cols-2 gap-4 p-4 font-mono border-4 border-black rounded-lg md:p-8 bg-base-100"
     @submit.prevent="emit('form:submit', formValues)">
     <header class="col-span-2">
       <h1 class="mb-6 font-mono text-xl font-bold text-center md:text-4xl">Simple Pomodoro Timer</h1>
@@ -39,10 +39,10 @@
       name="shouldUseAcceleratedTime"
       class="col-span-2"
       :errors="formErrors?.shouldUseAcceleratedTime" />
-    <button class="col-span-2 btn btn-outline btn-success"
+    <button class="col-span-2 border-4 btn btn-neutral"
       type="submit"
       :disabled="!isValid">
-      Start timer
+      START TIMER
     </button>
   </form>
 </template>

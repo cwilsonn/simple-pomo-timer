@@ -6,11 +6,11 @@
         v-model="value"
         :name="name"
         type="checkbox"
-        class="checkbox"
+        class="border-2 border-neutral checkbox"
         :placeholder="placeholder || label"
         :disabled="disabled"
         :required="required" />
-      <span class="label-text">
+      <span class="font-bold label-text">
         {{ label }}
         <span v-if="required"
           class="align-top text-error label-required-indicator">*</span>
