@@ -1,6 +1,5 @@
 <template>
   <section class="grid gap-4 place-items-center">
-    <!-- Display the countdown timer here, defaulting to 00:00 -->
     <div class="font-mono font-bold text-center text-9xl"
       :class="{
         'text-success': !isOnBreak,
@@ -11,9 +10,9 @@
       <button class="border-4 btn btn-lg btn-circle btn-outline"
         type="button"
         :class="{
-        'btn-error': !isPaused,
-        'btn-success': isPaused,
-      }"
+          'btn-error': !isPaused,
+          'btn-success': isPaused,
+        }"
         :title="isPaused ? 'Start' : 'Pause' + ' timer'"
         @click="isPaused ? emit('timer:play') : emit('timer:pause')">
         <Icon :name="isPaused ? 'uil:play' : 'uil:pause'"
@@ -30,6 +29,14 @@
           size="3rem" />
         <span class="sr-only">Stop timer</span>
       </button>
+      <button class="border-4 btn btn-lg btn-circle btn-outline btn-error"
+        type="button"
+        :title="(isMuted ? 'Unmute' : 'Mute') + ' sounds'"
+        @click="isMuted ? emit('timer:unmute-audio') : emit('timer:mute-audio')">
+        <Icon :name="isMuted ? 'uil:volume' : 'uil:volume-mute'"
+          size="3rem" />
+        <span class="sr-only">{{ isMuted ? 'Unmute' : 'Mute' }} sounds</span>
+      </button>
     </div>
   </section>
 </template>
@@ -41,8 +48,15 @@
     timer: NodeJS.Timeout,
     isOnBreak: boolean,
     isPaused: boolean,
+    isMuted: boolean,
   };
 
   const props = defineProps<PomoTimerTimerProps>();
-  const emit = defineEmits(['timer:play', 'timer:pause', 'timer:stop']);
+  const emit = defineEmits([
+    'timer:play',
+    'timer:pause',
+    'timer:stop',
+    'timer:unmute-audio',
+    'timer:mute-audio',
+  ]);
 </script>

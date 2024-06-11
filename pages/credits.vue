@@ -1,5 +1,5 @@
 <template>
-  <article class="container grid p-4 mx-auto place-items-center">
+  <article class="container grid p-2 mx-auto text-center place-items-center">
     <h1 class="mb-6 font-mono text-4xl font-bold">Credits</h1>
     <p>This app incorporates materials that are licensed under
       <Icon name="tabler:creative-commons"
@@ -10,7 +10,7 @@
     </p>
     <hr class="divider" />
     <p>Thanks to the following:</p>
-    <ul class="mt-2 list-disc list">
+    <ul class="mt-2 list-none list">
       <li v-for="credit in credits"
         :key="credit.name">
         <a :href="credit.url"

@@ -1,6 +1,6 @@
 <template>
   <form id="pomodoro-form"
-    class="grid grid-cols-2 gap-4 p-8 rounded-lg shadow bg-base-100"
+    class="grid grid-cols-2 gap-4 p-8 rounded-lg shadow-lg bg-base-100"
     @submit.prevent="emit('form:submit', formValues)">
     <header class="col-span-2">
       <h1 class="mb-6 font-mono text-4xl font-bold text-center">Simple Pomodoro Timer</h1>
@@ -12,14 +12,14 @@
       label="Work duration (minutes)"
       placeholder="Work duratation"
       name="workDuration"
-      class="col-span-1"
+      class="col-span-2 md:col-span-1"
       :errors="formErrors?.workDuration"
       required />
     <FormItemNumber v-model="formValues.breakDuration"
       label="Break duration (minutes)"
       placeholder="Break duratation"
       name="breakDuration"
-      class="col-span-1"
+      class="col-span-2 md:col-span-1"
       :errors="formErrors?.breakDuration"
       required />
     <FormItemCheckbox v-model="formValues.shouldRepeat"
@@ -27,6 +27,12 @@
       name="shouldRepeat"
       class="col-span-2"
       :errors="formErrors?.shouldRepeat" />
+    <FormItemCheckbox
+      v-model="formValues.shouldPlaySound"
+      label="Enable audio notifications"
+      name="shouldPlaySound"
+      class="col-span-2"
+      :errors="formErrors?.shouldPlaySound" />
     <FormItemCheckbox v-if="shouldShowDevFeatures"
       v-model="formValues.shouldUseAcceleratedTime"
       label="Use accelerated time"
@@ -52,6 +58,7 @@
     workDuration: 25,
     breakDuration: 5,
     shouldRepeat: true,
+    shouldPlaySound: true,
     shouldUseAcceleratedTime: false,
   }, {
     workDuration: { required },
