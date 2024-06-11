@@ -1,10 +1,10 @@
 <template>
   <form id="pomodoro-form"
-    class="grid grid-cols-2 gap-4 p-8 rounded-lg shadow-lg bg-base-100"
+    class="grid grid-cols-2 gap-4 p-4 rounded-lg shadow-lg md:p-8 bg-base-100"
     @submit.prevent="emit('form:submit', formValues)">
     <header class="col-span-2">
-      <h1 class="mb-6 font-mono text-4xl font-bold text-center">Simple Pomodoro Timer</h1>
-      <p class="mb-6 text-center">The Pomodoro Technique is a time management method that uses a timer to break down
+      <h1 class="mb-6 font-mono text-xl font-bold text-center md:text-4xl">Simple Pomodoro Timer</h1>
+      <p class="mb-6 text-sm text-center md:text-base">The Pomodoro Technique is a time management method that uses a timer to break down
         work
         into intervals, traditionally 25 minutes in length, separated by short breaks.</p>
     </header>

@@ -1,7 +1,7 @@
 <template>
   <article class="container grid p-2 mx-auto text-center place-items-center">
-    <h1 class="mb-6 font-mono text-4xl font-bold">Credits</h1>
-    <p>This app incorporates materials that are licensed under
+    <h1 class="mb-6 font-mono text-xl font-bold md:text-4xl">Credits</h1>
+    <p class="text-sm md:text-base">This app incorporates materials that are licensed under
       <Icon name="tabler:creative-commons"
         size="1.5rem" class="me-1" /><a href="https://creativecommons.org/"
         class="link"
@@ -9,8 +9,8 @@
         rel="noopener noreferrer">Creative Commons</a>
     </p>
     <hr class="divider" />
-    <p>Thanks to the following:</p>
-    <ul class="mt-2 list-none list">
+    <p class="text-sm md:text-base">Thanks to the following:</p>
+    <ul class="mt-2 text-sm list-none md:text-base list">
       <li v-for="credit in credits"
         :key="credit.name">
         <a :href="credit.url"
