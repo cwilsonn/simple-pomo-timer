@@ -4,6 +4,9 @@ import daisyui from 'daisyui';
 export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: false,
+  css: [
+    '~/assets/css/fonts.css',
+  ],
   modules: [
     '@nuxtjs/google-fonts',
     '@nuxtjs/tailwindcss',
@@ -30,6 +33,7 @@ export default defineNuxtConfig({
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
             mono: ['Space Mono', 'monospace'],
+            dseg: ['DSEG14-Modern', 'monospace'],
           },
         },
       },

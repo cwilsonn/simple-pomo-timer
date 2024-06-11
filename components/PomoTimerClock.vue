@@ -1,41 +1,37 @@
 <template>
-  <section class="grid gap-4 place-items-center">
-    <div class="font-mono font-bold text-center text-7xl md:text-9xl"
+  <section class="grid max-w-screen-md gap-4 place-items-center">
+    <div class="w-full p-16 font-bold text-center rounded-lg border-[6px] font-dseg text-7xl md:text-9xl"
       :class="{
-        'text-success': !isOnBreak,
-        'text-error': isOnBreak
+        'text-success border-success bg-success bg-opacity-25': !isOnBreak,
+        'text-warning border-warning bg-warning bg-opacity-25': isOnBreak
       }">{{ countdown }}</div>
     <div v-if="timer"
-      class="flex flex-row gap-2">
-      <button class="border-4 btn btn-lg btn-circle btn-outline"
+      class="flex flex-col w-full gap-4 sm:flex-row justify-stretch">
+      <button class="flex-grow font-mono font-bold border-4 btn md:btn-lg btn-outline basis-0"
         type="button"
-        :class="{
-          'btn-error': !isPaused,
-          'btn-success': isPaused,
-        }"
         :title="isPaused ? 'Start' : 'Pause' + ' timer'"
         @click="isPaused ? emit('timer:play') : emit('timer:pause')">
         <Icon :name="isPaused ? 'uil:play' : 'uil:pause'"
-          size="3rem" />
-        <span class="sr-only">
-          {{ isPaused ? 'Start' : 'Pause' }} timer
+          size="2rem" />
+        <span>
+          {{ isPaused ? 'PLAY' : 'PAUSE' }}
         </span>
       </button>
-      <button class="border-4 btn btn-lg btn-circle btn-outline btn-error"
+      <button class="flex-grow font-mono font-bold border-4 btn md:btn-lg btn-outline basis-0"
         type="button"
         title="Stop timer"
         @click="emit('timer:stop')">
         <Icon name="uil:stopwatch-slash"
-          size="3rem" />
-        <span class="sr-only">Stop timer</span>
+          size="2rem" />
+        <span>STOP</span>
       </button>
-      <button class="border-4 btn btn-lg btn-circle btn-outline btn-error"
+      <button class="flex-grow font-mono font-bold border-4 btn md:btn-lg btn-outline basis-0"
         type="button"
         :title="(isMuted ? 'Unmute' : 'Mute') + ' sounds'"
         @click="isMuted ? emit('timer:unmute-audio') : emit('timer:mute-audio')">
-        <Icon :name="isMuted ? 'uil:volume' : 'uil:volume-mute'"
-          size="3rem" />
-        <span class="sr-only">{{ isMuted ? 'Unmute' : 'Mute' }} sounds</span>
+        <Icon :name="isMuted ? 'uil:volume-mute' : 'uil:volume'"
+          size="2rem" />
+        <span>{{ isMuted ? 'UNMUTE' : 'MUTE' }}</span>
       </button>
     </div>
   </section>
