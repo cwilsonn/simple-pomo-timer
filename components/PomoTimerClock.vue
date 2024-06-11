@@ -1,6 +1,6 @@
 <template>
   <section class="grid max-w-screen-md gap-4 place-items-center">
-    <div class="w-full p-16 font-bold text-center rounded-lg border-[6px] font-dseg text-7xl md:text-9xl"
+    <div class="w-full p-16 font-bold text-center border-[6px] font-dseg text-7xl md:text-9xl"
       :class="{
         'text-success border-success bg-success bg-opacity-25': !isOnBreak,
         'text-warning border-warning bg-warning bg-opacity-25': isOnBreak
