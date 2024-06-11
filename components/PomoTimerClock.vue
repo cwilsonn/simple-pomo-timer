@@ -1,6 +1,6 @@
 <template>
   <section class="grid gap-4 place-items-center">
-    <div class="font-mono font-bold text-center text-9xl"
+    <div class="font-mono font-bold text-center text-7xl md:text-9xl"
       :class="{
         'text-success': !isOnBreak,
         'text-error': isOnBreak
