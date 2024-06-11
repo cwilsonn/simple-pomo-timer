@@ -1,5 +1,5 @@
 <template>
-  <div class="container p-2 mx-auto">
+  <div class="container max-w-screen-md p-2 mx-auto">
     <PomoTimerClock v-if="state.timer"
       :countdown="state.countdown"
       :timer="state.timer"
